@@ -1,11 +1,12 @@
 # symfony-issue-19209-sample-project
 
 Steps to reproduce:
-# php bin/console doctrine:database:create
-# php bin/console doctrine:schema:create
-# php bin/console doctrine:fixtures:load
-# php bin/console app:test
-# php bin/console app:test
+
+1. php bin/console doctrine:database:create
+2. php bin/console doctrine:schema:create
+3. php bin/console doctrine:fixtures:load
+4. php bin/console app:test
+5. php bin/console app:test
 
 First execution of app:test will work fine, second execution will throw a ContextErrorException where a FormErrorIterator is expected.
 
