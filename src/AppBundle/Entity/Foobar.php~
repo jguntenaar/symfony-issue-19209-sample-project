@@ -1,0 +1,44 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Foobar
+ *
+ * @ORM\Table(name="foobar")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\FoobarRepository")
+ */
+class Foobar
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Beer", inversedBy="foobar")
+     */
+    private $beer;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Cake", inversedBy="foobar")
+     */
+    private $cake;
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}
+

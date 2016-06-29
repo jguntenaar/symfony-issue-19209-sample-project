@@ -1,0 +1,6 @@
+AppBundle\Entity\Foobar:
+  constraints:
+      - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+          fields: [beer, cake]
+          errorPath: cake
+          message: 'This beer-cake combination is already used'
